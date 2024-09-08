@@ -15,8 +15,7 @@ import { Item } from '../item.model';
 })
 export class ItemComponent implements OnInit {
   items: Item[] = [];
-  newItem = { id: 0, name: '', type: '',category:'', price: 0 };
-
+  newItem = {name: '', type: '',category:'', price: 0 };
   constructor(private itemService: ItemService) {}
 
   ngOnInit() {
@@ -29,9 +28,9 @@ export class ItemComponent implements OnInit {
     });
   }
 
-  async createItem() {
-    await this.itemService.createItem(this.newItem).subscribe(() => {
-      this.newItem = {id: 0, name: '', type: '', category: '', price: 0 };
+  createItem(data:Item) {
+    this.itemService.createItem(data).subscribe(() => {
+      this.newItem = { name: '', type: '', category: '', price: 0 };
       this.loadItems();
     });
   }
@@ -41,9 +40,9 @@ export class ItemComponent implements OnInit {
       this.loadItems();
     });
   }
-  
+
   updateItem(item: Item): void {
-    this.itemService.updateItem(item.id, item).subscribe(() => {
+    this.itemService.updateItem(item.id!, item).subscribe(() => {
       this.loadItems();
     });
   }
