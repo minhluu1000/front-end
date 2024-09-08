@@ -1,0 +1,55 @@
+/* Style cho container của item */
+.item-container {
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+  }
+  
+  .item-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .item-container input {
+    padding: 8px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+  }
+  
+  .item-container button {
+    padding: 10px;
+    border: none;
+    background-color: #007bff;
+    color: #ffffff;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .item-container button:hover {
+    background-color: #0056b3;
+  }
+  
+  .item-container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .item-container table, th, td {
+    border: 1px solid #dee2e6;
+  }
+  
+  .item-container th, td {
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .item-container th {
+    background-color: #e9ecef;
+  }
+  
+  .item-container td button {
+    margin-right: 5px;
+  }
+  

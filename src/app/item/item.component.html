@@ -1,0 +1,38 @@
+  <div class="item-container">
+    <h1>CRUD Application</h1>
+    
+    <!-- Form thêm item mới -->
+    <form (submit)="createItem()">
+      <input [(ngModel)]="newItem.name" name="name" placeholder="Item name" required>
+      <input [(ngModel)]="newItem.type" name="type" placeholder="Item type" required>
+      <input [(ngModel)]="newItem.category" name="category" placeholder="Item category" required>
+      <input [(ngModel)]="newItem.price" name="price" placeholder="Item price" type="number" required>
+      <button type="submit">Create Item</button>
+      <button type="button" *ngIf="newItem.id > 0" (click)="updateItem(newItem)">Update Item</button>
+    </form>
+
+    <!-- Bảng danh sách item -->
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Category</th>
+          <th>Price</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of items; let i = index">
+          <td>{{ item.name }}</td>
+          <td>{{ item.type }}</td>
+          <td>{{ item.category }}</td>
+          <td>{{ item.price }}</td>
+          <td>
+            <button (click)="editItem(item)">Edit</button>
+            <button (click)="deleteItem(item.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
